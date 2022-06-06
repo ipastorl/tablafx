@@ -1,0 +1,86 @@
+    // /////////////////////// CON RXJAVA2 CALL ADAPTER FACTORY /////////////////////////////////
+
+//        // Retrofit Builder
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("https://api.spacexdata.com/v3/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // call adapter rxjava2
+//                .build();
+//        com.dbjson.ipljunio.DBCapsules service = retrofit.create(com.dbjson.ipljunio.DBCapsules.class);
+//        com.dbjson.ipljunio.Capsule capsule = null;
+//        String capsuleSerial = "C101";
+//
+//        // Obtener listado de cápsulas
+//        System.out.println("Capsules:");
+//        ObservableList<com.dbjson.ipljunio.Capsule> response = service.listCapsules(); // nuevo código
+//        //Response<List<Capsule>> response = service.listCapsules().execute(); // old ccode
+//        if (response.addAll()) {
+//            List<com.dbjson.ipljunio.Capsule> capsules = response.stream().toList();
+//            System.out.println(capsules);
+//        } else {
+//            System.out.println("Petición no válida " + response);
+//        }
+
+        // Obtener una cápsula por su "capsule_serial"
+//        System.out.println("Capsule " + capsuleSerial + " :");
+//        try {
+//            ObservableList<Capsule> response3 = service.listCapsules(); // nuevo código
+//            Response<Capsule> response2 = service.getCapsuleSerial(capsuleSerial).execute();
+//            if (response2.isSuccessful()) {
+//                capsule = response2.body();
+//                System.out.println(capsule);
+//                assert capsule != null;
+//                System.out.println("Mission of Capsule " + capsuleSerial + " :");
+//                System.out.println(capsule.getMissions());
+//            } else {
+//                System.out.println("Petición no válida " + response2.message());
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Error en la petición " + e.getMessage());
+//        }
+
+        //  ////////////////////////////////////////////////////////////////////////;
+
+        // //////////////////  CON GSON CONVERTER (MODO ORIGINAL CHEMA )///////////////////////////
+
+//        // Retrofit Builder
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("https://api.spacexdata.com/v3/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        DBCapsules service = retrofit.create(DBCapsules.class);
+//        Capsule capsule = null;
+//        String capsuleSerial = "C101";
+//
+//        // Obtener listado de cápsulas
+//        System.out.println("Capsules:");
+//        try {
+//            Response<List<Capsule>> response = service.listCapsules().execute();
+//            if (response.isSuccessful()) {
+//                List<Capsule> capsules = response.body();
+//                System.out.println(capsules);
+//            } else {
+//                System.out.println("Petición no válida " + response.message());
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Error en la petición " + e.getMessage());
+//        }
+//
+//        // Obtener una cápsula por su "capsule_serial"
+//        System.out.println("Capsule " + capsuleSerial + " :");
+//        try {
+//            Response<Capsule> response = service.getCapsuleSerial(capsuleSerial).execute();
+//            if (response.isSuccessful()) {
+//                capsule = response.body();
+//                System.out.println(capsule);
+//                assert capsule != null;
+//                System.out.println("Mission of Capsule " + capsuleSerial + " :");
+//                System.out.println(capsule.getMissions());
+//            } else {
+//                System.out.println("Petición no válida " + response.message());
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Error en la petición " + e.getMessage());
+//        }
+
+        //  ////////////////////////////////////////////////////////////////////////;
