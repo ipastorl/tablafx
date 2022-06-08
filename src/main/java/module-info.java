@@ -5,6 +5,7 @@ module com.ipastorl.tablafx {
     requires retrofit2;
     requires io.reactivex.rxjava3;
     requires retrofit2.converter.gson;
+    requires com.google.gson;
     requires retrofit2.adapter.rxjava;
 
 

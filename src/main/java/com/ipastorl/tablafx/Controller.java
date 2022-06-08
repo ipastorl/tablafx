@@ -3,6 +3,7 @@ package com.ipastorl.tablafx;
 import com.ipastorl.tablafx.model.Capsule;
 import com.ipastorl.tablafx.model.CapsulesService;
 import com.ipastorl.tablafx.model.Mission;
+import io.reactivex.rxjava3.core.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,19 +13,18 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.Call;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
     // ObservableList
-
-    ObservableList<Capsule> capsules;
-    ObservableList<Mission> missions;
+    Call<Capsule> capsule;
+    Call<List<Capsule>> capsules;
+    List<Mission> missions;
 
     // Containers
 
@@ -95,9 +95,6 @@ public class Controller implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // initialize ObservableList
-        capsules = FXCollections.observableArrayList();
-        missions = FXCollections.observableArrayList();
 
         final CapsulesService capsulesService = new CapsulesService();
 
@@ -114,15 +111,17 @@ public class Controller implements Initializable {
 
         // Table View Capsule
         capsules = capsulesService.getAllCapsules();
-        tableview_spacex.setItems(capsules);
+ //       tableview_spacex.setItems(capsules);
 
         // Cells columns of Table View Missions
         name.setCellValueFactory(new PropertyValueFactory<Mission,String>("name"));
         flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flight"));
 
         // Table View Missions
-        missions = capsulesService.getAllMissions("C101");
-        tableview_missions.setItems(missions);
+        capsule = capsulesService.getCapsule("C106");
+        // missions = capsulesService.getAllMissions("C101");
+       // tableview_missions.setItems(missions);
 
     }
+
 }
