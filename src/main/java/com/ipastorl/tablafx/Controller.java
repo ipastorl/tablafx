@@ -1,9 +1,9 @@
 package com.ipastorl.tablafx;
 
 import com.ipastorl.tablafx.model.Capsule;
+import com.ipastorl.tablafx.model.CapsulesApiService;
 import com.ipastorl.tablafx.model.CapsulesService;
 import com.ipastorl.tablafx.model.Mission;
-import io.reactivex.rxjava3.core.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import retrofit2.Call;
 
 import java.net.URL;
 import java.util.List;
@@ -22,8 +21,8 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     // ObservableList
-    Call<Capsule> capsule;
-    Call<List<Capsule>> capsules;
+    Capsule capsule;
+    List<Capsule> capsules;
     List<Mission> missions;
 
     // Containers
@@ -111,7 +110,10 @@ public class Controller implements Initializable {
 
         // Table View Capsule
         capsules = capsulesService.getAllCapsules();
- //       tableview_spacex.setItems(capsules);
+
+        // Convert List to ObservableList (Capsule)
+        ObservableList<Capsule> capsulesList = FXCollections.observableList(capsules);
+        tableview_spacex.setItems(capsulesList);
 
         // Cells columns of Table View Missions
         name.setCellValueFactory(new PropertyValueFactory<Mission,String>("name"));
@@ -119,8 +121,11 @@ public class Controller implements Initializable {
 
         // Table View Missions
         capsule = capsulesService.getCapsule("C106");
-        // missions = capsulesService.getAllMissions("C101");
-       // tableview_missions.setItems(missions);
+        missions = capsulesService.getMissions();
+
+        // Convert List to ObservableList (Mission)
+        ObservableList<Mission> missionsList = FXCollections.observableList(missions);
+        tableview_missions.setItems(missionsList);
 
     }
 

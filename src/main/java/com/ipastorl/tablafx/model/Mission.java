@@ -1,48 +1,43 @@
 package com.ipastorl.tablafx.model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.google.gson.annotations.SerializedName;
 
 public class Mission {
-    private String name;
-    private Integer flight;
+    @SerializedName("name")
+    private String nameM;
+    @SerializedName("flight")
+    private Integer flightM;
 
     public Mission(String name, Integer flight) {
-        this.name = name;
-        this.flight = flight;
+        this.nameM = name;
+        this.flightM = flight;
     }
 
     public Mission() {
     }
 
     public String getName() {
-        return name;
+        return nameM;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameM = name;
     }
 
     public Integer getFlight() {
-        return flight;
+        return flightM;
     }
 
     public void setFlight(Integer flight) {
-        this.flight = flight;
+        this.flightM = flight;
     }
 
-    public ObservableList<Mission> getMissions(){
-
-        return FXCollections.observableArrayList(
-                // insert items here
-        );
-    }
 
     @Override
     public String toString() {
         return "Mission{" +
-                "name='" + name + '\'' +
-                ", flight=" + flight +
+                "name='" + nameM + '\'' +
+                ", flight=" + flightM +
                 '}';
     }
 }

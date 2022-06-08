@@ -1,18 +1,21 @@
 package com.ipastorl.tablafx;
 
-import com.ipastorl.tablafx.model.CapsulesApiService;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.io.IOException;
+// Task :run FAILED
+// file:/C:/Users/issa2/OneDrive/Documentos/DAW/PROGRAMACION/tablafx/build/resources/main/com/ipastorl/tablafx/view.fxml
+// ruta absoluta
+// C:\Users\issa2\OneDrive\Documentos\DAW\PROGRAMACION\tablafx\src\main\resources\com\ipastorl\tablafx/view.fxml
 
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        System.out.println(MainApplication.class.getResource("view.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 740, 420);
         stage.setTitle("Space X Capsules");
@@ -21,12 +24,6 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
-        // Retrofit Builder
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.spacexdata.com/v3/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        CapsulesApiService service = retrofit.create(CapsulesApiService.class);
         launch();
     }
 }

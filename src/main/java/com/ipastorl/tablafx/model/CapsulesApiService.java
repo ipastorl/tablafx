@@ -16,8 +16,8 @@ import java.util.List;
 public interface CapsulesApiService {
 
     @GET("capsules")
-     Call<List<Capsule>> getAllCapsules();
-    //List<Capsule> getAllCapsules();
+    Call<List<Capsule>> getAllCapsules();
+//    ObservableList<Capsule> getAllCapsules();
 
 
     @GET("capsules/{capsule_serial}")
@@ -25,4 +25,5 @@ public interface CapsulesApiService {
     // Capsule getCapsule(@Path("capsule_serial") String capsule_serial);
     // ObservableList<Mission> getAllMissions(@Path("capsule_serial") String capsule_serial);
     // un objeto capsula
+    // Observable<Capsule> getCapsuleSerial(@Path("capsule_serial") String capsuleSerial);
 }
