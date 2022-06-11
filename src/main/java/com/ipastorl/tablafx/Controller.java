@@ -97,15 +97,15 @@ public class Controller implements Initializable {
 
     public void onClickSpaceX(ActionEvent actionEvent) {
         // Cells columns of Table View Capsule
-        capsule_serial.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsule_serial"));
-        capsule_id.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsule_id"));
-        status.setCellValueFactory(new PropertyValueFactory<Capsule,String>("status"));
-        original_launch.setCellValueFactory(new PropertyValueFactory<Capsule,String>("original_launch"));
-        original_launch_unix.setCellValueFactory(new PropertyValueFactory<Capsule,Integer>("original_launch_unix"));
-        landings.setCellValueFactory(new PropertyValueFactory<Capsule,Integer>("landings"));
-        type.setCellValueFactory(new PropertyValueFactory<Capsule,String>("type"));
-        details.setCellValueFactory(new PropertyValueFactory<Capsule,String>("details"));
-        reuse_count.setCellValueFactory(new PropertyValueFactory<Capsule, Integer>("reuse_count"));
+        capsule_serial.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsuleSerialC"));
+        capsule_id.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsuleIdC"));
+        status.setCellValueFactory(new PropertyValueFactory<Capsule,String>("statusC"));
+        original_launch.setCellValueFactory(new PropertyValueFactory<Capsule,String>("originalLaunchC"));
+        original_launch_unix.setCellValueFactory(new PropertyValueFactory<Capsule,Integer>("originalLaunchunixC"));
+        landings.setCellValueFactory(new PropertyValueFactory<Capsule,Integer>("landingsC"));
+        type.setCellValueFactory(new PropertyValueFactory<Capsule,String>("typeC"));
+        details.setCellValueFactory(new PropertyValueFactory<Capsule,String>("detailsC"));
+        reuse_count.setCellValueFactory(new PropertyValueFactory<Capsule, Integer>("reuseCountC"));
 
         // Table View Capsule
         capsules = (new CapsuleList()).getCapsuleList();
@@ -119,8 +119,8 @@ public class Controller implements Initializable {
     public void onClickMissions(ActionEvent actionEvent) {
         CapsuleList cl = new CapsuleList();
         // Cells columns of Table View Missions
-        name.setCellValueFactory(new PropertyValueFactory<Mission,String>("name"));
-        flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flight"));
+        name.setCellValueFactory(new PropertyValueFactory<Mission,String>("nameM"));
+        flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flightM"));
 
         // Table View Missions
         Capsule capsule = cl.getCapsule();

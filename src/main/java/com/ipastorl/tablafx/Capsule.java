@@ -6,25 +6,25 @@ import java.util.ArrayList;
 
 public class Capsule {
     @SerializedName("capsule_serial")
-    private String capsuleSerialC;
+    public String capsuleSerialC;
     @SerializedName("capsule_id")
-    private String capsuleIdC;
+    public String capsuleIdC;
     @SerializedName("status")
-    private String statusC;
+    public String statusC;
     @SerializedName("original_launch")
-    private String originalLaunchC;
+    public String originalLaunchC;
     @SerializedName("original_launch_unix")
-    private Integer originalLaunchunixC;
+    public Integer originalLaunchunixC;
     @SerializedName("missions")
-    private ArrayList<Mission> missionsC;
+    public ArrayList<Mission> missionsC;
     @SerializedName("landings")
-    private Integer landingsC;
+    public Integer landingsC;
     @SerializedName("type")
-    private String typeC;
+    public String typeC;
     @SerializedName("details")
-    private String detailsC;
+    public String detailsC;
     @SerializedName("reuse_count")
-    private Integer reuseCountC;
+    public Integer reuseCountC;
 
     public Capsule(String capsuleSerialC, String capsuleIdC, String statusC, String originalLaunchC
             , Integer originalLaunchunixC, ArrayList<Mission> missionsC, Integer landingsC

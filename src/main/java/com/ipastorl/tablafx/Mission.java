@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Mission {
     @SerializedName("name")
-    private String nameM;
+    public String nameM;
     @SerializedName("flight")
-    private Integer flightM;
+    public Integer flightM;
 
     public Mission(String name, Integer flight) {
         this.nameM = name;
