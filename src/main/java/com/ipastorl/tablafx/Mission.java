@@ -1,4 +1,4 @@
-package com.ipastorl.tablafx.model;
+package com.ipastorl.tablafx;
 
 import com.google.gson.annotations.SerializedName;
 

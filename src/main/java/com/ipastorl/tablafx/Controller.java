@@ -1,11 +1,9 @@
 package com.ipastorl.tablafx;
 
-import com.ipastorl.tablafx.model.Capsule;
-import com.ipastorl.tablafx.model.CapsulesApiService;
-import com.ipastorl.tablafx.model.CapsulesService;
-import com.ipastorl.tablafx.model.Mission;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -21,7 +19,6 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     // ObservableList
-    Capsule capsule;
     List<Capsule> capsules;
     List<Mission> missions;
 
@@ -95,8 +92,10 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        final CapsulesService capsulesService = new CapsulesService();
 
+    }
+
+    public void onClickSpaceX(ActionEvent actionEvent) {
         // Cells columns of Table View Capsule
         capsule_serial.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsule_serial"));
         capsule_id.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsule_id"));
@@ -109,24 +108,27 @@ public class Controller implements Initializable {
         reuse_count.setCellValueFactory(new PropertyValueFactory<Capsule, Integer>("reuse_count"));
 
         // Table View Capsule
-        capsules = capsulesService.getAllCapsules();
+        capsules = (new CapsuleList()).getCapsuleList();
 
         // Convert List to ObservableList (Capsule)
         ObservableList<Capsule> capsulesList = FXCollections.observableList(capsules);
         tableview_spacex.setItems(capsulesList);
 
+    }
+
+    public void onClickMissions(ActionEvent actionEvent) {
+        CapsuleList cl = new CapsuleList();
         // Cells columns of Table View Missions
         name.setCellValueFactory(new PropertyValueFactory<Mission,String>("name"));
         flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flight"));
 
         // Table View Missions
-        capsule = capsulesService.getCapsule("C106");
-        missions = capsulesService.getMissions();
+        Capsule capsule = cl.getCapsule();
+        // missions = capsulesService.getMissions();
+        missions = (new CapsuleList()).getMissionList();
 
         // Convert List to ObservableList (Mission)
         ObservableList<Mission> missionsList = FXCollections.observableList(missions);
         tableview_missions.setItems(missionsList);
-
     }
-
 }
