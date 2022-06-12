@@ -7,11 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-// Task :run FAILED
-// file:/C:/Users/issa2/OneDrive/Documentos/DAW/PROGRAMACION/tablafx/build/resources/main/com/ipastorl/tablafx/view.fxml
-// ruta absoluta
-// C:\Users\issa2\OneDrive\Documentos\DAW\PROGRAMACION\tablafx\src\main\resources\com\ipastorl\tablafx/view.fxml
 
+/**
+ * The type Main application.
+ *
+ * @version 1.0
+ * @author Isabel Pastor López
+ */
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -23,6 +25,11 @@ public class MainApplication extends Application {
         stage.show();
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch();
     }

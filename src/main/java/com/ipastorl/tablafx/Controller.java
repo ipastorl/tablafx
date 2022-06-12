@@ -1,6 +1,7 @@
 package com.ipastorl.tablafx;
 
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,16 +13,32 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * The type Controller.
+ *
+ * @version 1.0
+ * @author Isabel Pastor López
+ */
 public class Controller implements Initializable {
 
-    // ObservableList
+    /**
+     * The Capsule.
+     */
+// ObservableList
     Capsule capsule;
+    /**
+     * The Capsules.
+     */
     List<Capsule> capsules;
+    /**
+     * The Missions.
+     */
     List<Mission> missions;
 
     // Containers
@@ -36,6 +53,9 @@ public class Controller implements Initializable {
 
     @FXML // fx:id="btn_spacex"
     private Button btn_spacex; // Value injected by FXMLLoader
+
+    @FXML // fx:id="btn_exit"
+    private Button  btn_exit; // Value injected by FXMLLoader
 
     // Table Views
 
@@ -93,10 +113,13 @@ public class Controller implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
     }
 
+    /**
+     * On click space x.
+     *
+     * @param actionEvent the action event
+     */
     public void onClickSpaceX(ActionEvent actionEvent) {
         // Cells columns of Table View Capsule
         capsule_serial.setCellValueFactory(new PropertyValueFactory<Capsule,String>("capsuleSerialC"));
@@ -118,6 +141,11 @@ public class Controller implements Initializable {
 
     }
 
+    /**
+     * On click missions.
+     *
+     * @param actionEvent the action event
+     */
     public void onClickMissions(ActionEvent actionEvent) {
 
         // if item selected is not empty
@@ -145,7 +173,21 @@ public class Controller implements Initializable {
             alert.showAndWait();
 
         }
+    }
 
-
+    /**
+     * On click exit.
+     *
+     * @param actionEvent the action event
+     */
+    public void onClickExit(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("INFORMACIÓN");
+        alert.setContentText("Gracias por utilizar el programa Space X");
+        alert.showAndWait();
+        Stage stage = (Stage) this.btn_exit.getScene().getWindow();
+        stage.close(); // close windows
+        Platform.exit(); // close application
     }
 }
