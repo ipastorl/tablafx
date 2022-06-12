@@ -16,22 +16,21 @@ public class Mission {
     public Mission() {
     }
 
-    public String getName() {
+    public String getNameM() {
         return nameM;
     }
 
-    public void setName(String name) {
-        this.nameM = name;
+    public void setNameM(String nameM) {
+        this.nameM = nameM;
     }
 
-    public Integer getFlight() {
+    public Integer getFlightM() {
         return flightM;
     }
 
-    public void setFlight(Integer flight) {
-        this.flightM = flight;
+    public void setFlightM(Integer flightM) {
+        this.flightM = flightM;
     }
-
 
     @Override
     public String toString() {

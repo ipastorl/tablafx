@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     // ObservableList
+    Capsule capsule;
     List<Capsule> capsules;
     List<Mission> missions;
 
@@ -117,18 +119,33 @@ public class Controller implements Initializable {
     }
 
     public void onClickMissions(ActionEvent actionEvent) {
-        CapsuleList cl = new CapsuleList();
-        // Cells columns of Table View Missions
-        name.setCellValueFactory(new PropertyValueFactory<Mission,String>("nameM"));
-        flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flightM"));
 
-        // Table View Missions
-        Capsule capsule = cl.getCapsule();
-        // missions = capsulesService.getMissions();
-        missions = (new CapsuleList()).getMissionList();
+        // if item selected is not empty
+        if(!tableview_spacex.getSelectionModel().isEmpty()) {
 
-        // Convert List to ObservableList (Mission)
-        ObservableList<Mission> missionsList = FXCollections.observableList(missions);
-        tableview_missions.setItems(missionsList);
+            // capsule selected in tableview SpaceX
+            capsule = tableview_spacex.getSelectionModel().getSelectedItem();
+            String capsuleSerial = capsule.getCapsuleSerialC();
+
+            // Cells columns of Table View Missions
+            name.setCellValueFactory(new PropertyValueFactory<Mission,String>("nameM"));
+            flight.setCellValueFactory(new PropertyValueFactory<Mission,Integer>("flightM"));
+
+            // missions = capsulesService.getMissions();
+            missions = (new CapsuleList()).getMissionList(capsuleSerial);
+
+            // Convert List to ObservableList (Mission)
+            ObservableList<Mission> missionsList = FXCollections.observableList(missions);
+            tableview_missions.setItems(missionsList);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debe seleccionar antes una cápsula de la lista Space X");
+            alert.showAndWait();
+
+        }
+
+
     }
 }

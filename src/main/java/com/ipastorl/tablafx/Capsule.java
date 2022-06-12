@@ -2,7 +2,7 @@ package com.ipastorl.tablafx;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Capsule {
     @SerializedName("capsule_serial")
@@ -16,7 +16,7 @@ public class Capsule {
     @SerializedName("original_launch_unix")
     public Integer originalLaunchunixC;
     @SerializedName("missions")
-    public ArrayList<Mission> missionsC;
+    public List<Mission> missionsC;
     @SerializedName("landings")
     public Integer landingsC;
     @SerializedName("type")
@@ -27,7 +27,7 @@ public class Capsule {
     public Integer reuseCountC;
 
     public Capsule(String capsuleSerialC, String capsuleIdC, String statusC, String originalLaunchC
-            , Integer originalLaunchunixC, ArrayList<Mission> missionsC, Integer landingsC
+            , Integer originalLaunchunixC, List<Mission> missionsC, Integer landingsC
             , String typeC, String detailsC, Integer reuseCountC) {
         this.capsuleSerialC = capsuleSerialC;
         this.capsuleIdC = capsuleIdC;
@@ -84,11 +84,11 @@ public class Capsule {
         this.originalLaunchunixC = originalLaunchunixC;
     }
 
-    public ArrayList<Mission> getMissionsC() {
+    public List<Mission> getMissionsC() {
         return missionsC;
     }
 
-    public void setMissionsC(ArrayList<Mission> missionsC) {
+    public void setMissionsC(List<Mission> missionsC) {
         this.missionsC = missionsC;
     }
 
