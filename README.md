@@ -1,7 +1,7 @@
 # tablafx
 
 <h1 align="center"> SpaceX Capsules </h1>
-<p align="center"> ![image](https://user-images.githubusercontent.com/92450383/173262241-ef3a7e3f-309b-4e18-9062-3c0b3f176617.png)
+<p align="center"> <img src="https://user-images.githubusercontent.com/92450383/173262241-ef3a7e3f-309b-4e18-9062-3c0b3f176617.png" alt="Captura de la aplicación SpaceX capsules")
  </p>
  
  ## Tabla de contenido:
