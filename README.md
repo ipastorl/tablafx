@@ -1,7 +1,7 @@
 # tablafx
 
 <h1 align="center"> SpaceX Capsules </h1>
-<p align="center"> <img src="https://user-images.githubusercontent.com/45814587/173258940-f78865f3-e39c-4d25-903c-3b40e8fc0f16.PNG" alt="Captura de la aplicación SpaceX Capsules">
+<p align="center"> <img src="https://user-images.githubusercontent.com/92450383/173262241-ef3a7e3f-309b-4e18-9062-3c0b3f176617.png" alt="Captura de la aplicación SpaceX capsules")
  </p>
  
  ## Tabla de contenido:
@@ -29,6 +29,10 @@
 <p>Obtenga un listado de cápsulas, pulsando el botón Mostrar cápsulas</p>
 
 <p>Para obtener la lista de misiones de una cápsula, seleccione la cápsula en la lista y posteriormente, pulse en Missions </p>
+
+<p>Para ordenar la lista obtenida pulse en el encabezado de cada columna una vez ordena de menor a mayor y dos viceversa</p>
+
+<p>Para salir de la aplicación, pulse el botón salir<p>
 
 
 ## Autora
