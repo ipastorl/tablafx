@@ -29,6 +29,7 @@
 <p>Obtenga un listado de cápsulas, pulsando el botón Mostrar cápsulas</p>
 
 <p>Para obtener la lista de misiones de una cápsula, seleccione la cápsula en la lista y posteriormente, pulse en Missions </p>
+<p>Para salir de la aplicación, pulse el botón salir<p>
 
 
 ## Autora
