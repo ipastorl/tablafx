@@ -33,7 +33,7 @@
 
 ## Autora
 
-Isabel Pastor López 
+<p>Isabel Pastor López</p> 
 https://isabelpastorlopez.com/
 
 ## Licencia
